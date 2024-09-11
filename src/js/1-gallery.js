@@ -1,3 +1,12 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+const lightBox = new SimpleLightbox('.gallery-item a', { 
+    captions: true,
+    captionsData: "alt",
+    captionsDelay: 250, 
+});
+
 const images = [
   {
     preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
@@ -68,13 +77,13 @@ const images = [
   }
 
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+// import SimpleLightbox from "simplelightbox";
+// import "simplelightbox/dist/simple-lightbox.min.css";
 
-const lightBox = new SimpleLightbox('.gallery-item a', { 
-    captions: true,
-    captionsData: "alt",
-    captionsDelay: 250, 
-});
+// const lightBox = new SimpleLightbox('.gallery-item a', { 
+//     captions: true,
+//     captionsData: "alt",
+//     captionsDelay: 250, 
+// });
     
 
