@@ -46,37 +46,35 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
-
-gallery.insertAdjacentHTML("beforeend", generateImagesMarkup(images));
-
-function generateImagesMarkup(images) {
-  return images.map((image) => {
-    return `
-      <li class="gallery-item">
-        <a class="gallery-link" href="${image.original}">
-          <img class="gallery-image" 
-               src="${image.preview}" 
-               data-source="${image.original}" 
-               alt="${image.description}"/>
-        </a>
-      </li>`;
-  }).join("");
-}
-
-const onBigImageClick = (event) => {
-  event.preventDefault();
+ 
+ const gallery = document.querySelector(".gallery");
   
-  if (event.target.nodeName !== "IMG") {
-    return;
+  gallery.insertAdjacentHTML("beforeend", generateImagesMarkup(images));
+  
+  function generateImagesMarkup(images) {
+    return images.map(({ preview, original, description }) => {
+      return `
+        <li class="gallery-item">
+          <a class="gallery-link" href="${original}">
+            <img 
+              class="gallery-image" 
+              src="${preview}" 
+              alt="${description}" 
+            />
+          </a>
+        </li>
+      `;
+    }).join("");
   }
 
-  const originalImage = event.target.dataset.source;
 
-  const instance = basicLightbox.create(`<img src="${originalImage}" width="1112" height="640" alt="${event.target.alt}">
-  `);
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
-  instance.show();
-};
+const lightBox = new SimpleLightbox('.gallery-item a', { 
+    captions: true,
+    captionsData: "alt",
+    captionsDelay: 250, 
+});
+    
 
-gallery.addEventListener("click", onBigImageClick);
