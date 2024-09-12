@@ -1,3 +1,11 @@
+ul,
+ol {
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
 .gallery-box {
     padding: 24px 156px;
 }
