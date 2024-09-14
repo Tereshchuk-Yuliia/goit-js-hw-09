@@ -12,11 +12,7 @@ const messageTextarea = document.querySelector('.message');
 // const textarea = document.querySelector(".textarea-field");
 const STORAGE_KEY = "feedback-form-state";
 const email = emailInput.value;
-const message = messageTextarea.value;
-  if (email === '' || message === '') {
-    alert('Please fill out all fields.');
-    return;
-  }
+
 const savedData = localStorage.getItem(STORAGE_KEY);
     if (savedData) {
         const parsedData = JSON.parse(savedData);
