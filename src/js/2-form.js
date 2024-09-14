@@ -7,9 +7,6 @@ const form = document.querySelector('.feedback-form');
 const emailInput = document.querySelector('.input-email');
 const messageTextarea = document.querySelector('.message');
 
-// const form = document.querySelector(".feedback-form");
-// const input = document.querySelector(".input-field");
-// const textarea = document.querySelector(".textarea-field");
 const STORAGE_KEY = "feedback-form-state";
 const email = emailInput.value;
 
